@@ -34,7 +34,6 @@ class Application:
         wd = self.wd
         wd.get(self.base_url + "my_view_page.php")
 
-
     def destroy(self):
         self.wd.quit()
 
