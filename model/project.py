@@ -3,13 +3,12 @@ from sys import maxsize
 
 class Project:
 
-    def __init__(self, id=None, name=None, href=None):
+    def __init__(self, id=None, name=None):
         self.id = id
         self.name = name
-        self.href = href
 
     def __repr__(self):
-        return "%s: %s %s" % (self.id, self.name, self.href)
+        return "%s: %s" % (self.id, self.name)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) and \

@@ -31,7 +31,7 @@ class ProjectHelper:
             href = cells[0].find_element_by_tag_name("a").get_attribute('href')
             name = cells[0].find_element_by_tag_name("a").text
             id = href.split("=")[1]
-            project_list.append(Project(id=id, name=name, href=href))
+            project_list.append(Project(id=id, name=name))
         return project_list
 
     def open_manage_projects_page(self):
@@ -54,7 +54,7 @@ class ProjectHelper:
 
     def open_project_page(self, project):
         wd = self.app.wd
-        wd.get(project.href)
+        wd.get(self.app.base_url + "manage_proj_edit_page.php?project_id=%s" % project.id)
 
 
 
